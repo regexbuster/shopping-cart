@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { v1 as uuidv1 } from 'uuid';
 
 import Home from './Home';
 import Shop from './Shop';
@@ -44,6 +45,9 @@ function App() {
             return res.json()
         })
         .then((res) => {
+            res.map((item) => {
+                item.uuid = uuidv1();
+            })
             setProducts(res)
         })
         .catch((err) => console.error(err))

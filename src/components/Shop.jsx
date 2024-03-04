@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from 'react-router-dom';
-import { v1 as uuidv1 } from 'uuid';
+
 
 import { ShopContext } from "./App";
 import Header from "./Header";
@@ -14,18 +14,17 @@ function Shop() {
         <>
             <Header />
             { products &&
-                
-                    <div className="items">
-                        {
-                            products.map((item) => {
-                                return (
-                                    <Link key={uuidv1()} to={`/shop/${item.title}`}>
-                                        <ItemCube image={item.image} title={item.title}/>;
-                                    </Link>
-                                )
-                            })
-                        }
-                    </div>
+                <div className="items">
+                    {
+                        products.map((item) => {
+                            return (
+                                <Link key={item.uuid} to={`/shop/${item.uuid}`}>
+                                    <ItemCube image={item.image} title={item.title}/>
+                                </Link>
+                            )
+                        })
+                    }
+                </div>
             }
         </>
     );
