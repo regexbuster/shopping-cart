@@ -10,7 +10,6 @@ export const ShopContext = createContext({
     products: [],
     cartItems: [],
     addToCart: () => {},
-    loading: true,
 })
 
 function App() {
@@ -33,25 +32,21 @@ function App() {
 
     const [cartItems, setCartItems] = useState([])
     
-    let products = null;
-    let loading = true;
-
+    const [products, setProducts] = useState([]);
+    
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products", {mode:"cors"})
+        fetch("https://fakestoreapi.com/products", {mode:"cors"}) //fetch data from API
         .then((res) => {
-            if (res.status >= 400){
+            if (!res.ok){
                 throw new Error("server error");
             }
-            return res.json();
+            
+            return res.json()
         })
         .then((res) => {
-            products = res;
-            console.log(res);
+            setProducts(res)
         })
         .catch((err) => console.error(err))
-        .finally(() => {
-            loading = false
-        })
     }, [])
 
     const addToCart = (newItem) => {
@@ -59,8 +54,8 @@ function App() {
     };
 
   return(
-    <ShopContext.Provider value={{products, cartItems, addToCart, loading}}>
-      <RouterProvider router={router} />
+    <ShopContext.Provider value={{products, cartItems, addToCart}}>
+        <RouterProvider router={router} />
     </ShopContext.Provider>
   );
 }

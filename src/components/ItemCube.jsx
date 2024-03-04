@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import '../styles/item-cube.css';
+
 function ItemCube(props) {
     const image = props.image;
     const title = props.title;

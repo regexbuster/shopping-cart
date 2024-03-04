@@ -3,23 +3,23 @@ import Header from "./Header";
 import { ShopContext } from "./App";
 import ItemCube from "./ItemCube";
 
-function Shop() {
-    const { products, loading } = useContext(ShopContext);
+import '../styles/shop.css';
 
-    useEffect(() => {
-        console.log(ShopContext.products)
-        console.log(loading)
-    }, [products, loading])
+function Shop() {
+    const { products } = useContext(ShopContext);
 
     return (
         <>
-            {loading && <p>Loading...</p>}
-            {products && 
-                <>
-                    <Header />
-                    <ItemCube image={products[0].image} title={products[0].title}/>
-                </>
-            }    
+            <Header />
+            { products &&
+                <div className="items">
+                    {
+                        products.map((item) => {
+                            return <ItemCube image={item.image} title={item.title}/>;
+                        })
+                    }
+                </div>
+            }
         </>
     );
 }
