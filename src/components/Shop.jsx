@@ -18,7 +18,7 @@ function Shop() {
                     {
                         products.map((item) => {
                             return (
-                                <Link key={item.uuid} to={`/shop/${item.uuid}`}>
+                                <Link key={item.uuid} to={`/item/${item.hash}`}>
                                     <ItemCube image={item.image} title={item.title}/>
                                 </Link>
                             )

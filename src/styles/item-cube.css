@@ -27,10 +27,12 @@
     max-width: 100%;
     max-height: 30%;
 
-    font-size: 2vh;
+    font-size: 1vw;
 
     text-align: center;
 
     margin-top: auto;
     margin-bottom: auto;
+
+    text-decoration: none;
 }

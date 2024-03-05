@@ -1,9 +1,11 @@
 import { createContext, useEffect, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { v1 as uuidv1 } from 'uuid';
+import { md5 } from 'hash-wasm';
 
 import Home from './Home';
 import Shop from './Shop';
+import Item from './Item';
 import Cart from './Cart';
 import Error from './Error';
 
@@ -24,6 +26,10 @@ function App() {
         {
             path: "shop",
             element: <Shop />
+        },
+        {
+            path: "item/:name",
+            element: <Item />
         },
         {
             path: "cart",
@@ -47,6 +53,11 @@ function App() {
         .then((res) => {
             res.map((item) => {
                 item.uuid = uuidv1();
+                // if product space is bigger need hash table b/c over possible overlap
+                md5(item.title.trim())
+                .then((hash)=>{
+                    item.hash = hash;
+                })
             })
             setProducts(res)
         })

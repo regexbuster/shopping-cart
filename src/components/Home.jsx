@@ -6,8 +6,10 @@ function Home() {
     return (
         <>
             <Header />
-            <h1>Shop Name</h1>
-            <p>We are a small business focused on locally sourced products.</p>
+            <div className="shop-details">
+                <h1>Shop Name</h1>
+                <p>We are a small business focused on locally sourced products.</p>
+            </div> 
         </>
     );
 }
