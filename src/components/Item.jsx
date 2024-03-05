@@ -20,7 +20,7 @@ function Item() {
     }, [name, products])
 
     function itemAddToCart(){
-        addToCart(name)
+        addToCart(curProduct)
     }
 
     return (
