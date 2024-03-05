@@ -3,7 +3,7 @@ import Header from "./Header";
 import '../styles/item.css';
 
 import { useContext, useEffect, useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Item() {
     const {products, addToCart} = useContext(ShopContext);
@@ -11,21 +11,13 @@ function Item() {
 
     const [curProduct, setCurProduct] = useState(null);
 
-    console.log(curProduct)
-
     useEffect(() =>{
         products.map((item) => {
-            //console.log(products, item.hash, name, item.hash == name)
             if(item.hash === name.trim()){
                 setCurProduct(item);
             }
         })
     }, [name, products])
-
-    //if the uuid of the item doesn't exist then send them to error page
-    // if (curProduct == null && products.length > 0){
-    //     return <Navigate to="/error" replace={true}/>
-    // }
 
     function itemAddToCart(){
         addToCart(name)
@@ -34,21 +26,25 @@ function Item() {
     return (
         <>
             <Header />
-            <div className="item-holder">
+            {!curProduct &&
+                <p>Loading...</p>
+            }
+            {curProduct &&
                 <div className="specific-item">
                     <div className="item-info">
-                        {/* <image src={0}/> */}
+                        <img src={curProduct.image}/>
                         <div className="item-details">
-
+                            <h1>{curProduct.title}</h1>
+                            <p>{curProduct.description}</p>
                         </div>
                     </div>
                     <div className="pricing">
-                        <h3>Price</h3>
-                        <p>{0}</p>
+                        <h1>Price</h1>
+                        <p>{`$${curProduct.price}`}</p>
                         <button type="button" onClick={itemAddToCart}>Add to Cart</button>
                     </div>
                 </div>
-            </div>
+            }            
         </>
     );
 }

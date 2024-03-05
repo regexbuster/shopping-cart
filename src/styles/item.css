@@ -1,12 +1,37 @@
-.item-holder {
+.specific-item {
     margin-top: 1vh;
     margin-left: auto;
     margin-right: auto;
 
     width: 70vw;
-    height: 10vh;
-
-    border: 1px solid black;
 
     display: flex;
+    flex-flow: column nowrap;
+}
+
+.item-info {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.item-info img {
+    max-height: 30%;
+    max-width: 30%;
+
+    margin: auto;
+}
+
+.item-details {
+    max-width: 60%;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.pricing {
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: flex-end;
 }
