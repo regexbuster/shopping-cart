@@ -1,8 +1,9 @@
-# React + Vite
+# Shopping Cart Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I'm not the best will CSS and am planning on learning Tailwind in the future to help with that a bit.
 
-Currently, two official plugins are available:
+Otherwise this is my first big project with React to help showcase my understanding.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I completed this demo website it around a day (short time frame developement :)
+
+The main goal of the demo was to prove I understood React and could develop in a short time window. I feel as though I've accomplished both tasks.
