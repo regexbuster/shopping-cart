@@ -7,3 +7,5 @@ Otherwise this is my first big project with React to help showcase my understand
 I completed this demo website it around a day (short time frame developement :)
 
 The main goal of the demo was to prove I understood React and could develop in a short time window. I feel as though I've accomplished both tasks.
+
+I published it to Netlify too. See it [here](https://regex-cart.netlify.app/).
