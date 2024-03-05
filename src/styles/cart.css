@@ -7,6 +7,11 @@
     flex-flow: column nowrap;
 }
 
+.cart-container p {
+    align-self: center;
+    font-size: 2vw;
+}
+
 .cart-item {
     display: flex;
     flex-flow: row nowrap;

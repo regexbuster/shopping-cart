@@ -13,15 +13,18 @@ function Cart() {
         <>
             <Header />
             <div className="cart-container">
+                { cartItems.length == 0 &&
+                    <p>Nothing is in your cart.</p>
+                }
                 { cartItems.length > 0 &&
                     <>
                         {
                             cartItems.map((item) => {
-                                sum += Number(item.price);
+                                sum += (Number(item.count) * Number(item.price));
                                 return (
                                     <div key={`${item.uuid}`} className="cart-item">
                                         <strong>{item.title}</strong>
-                                        <p>{`$${item.price}`}</p>
+                                        <p>{`${item.count} x $${item.price}`}</p>
                                     </div>
                                 )
                             })

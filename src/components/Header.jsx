@@ -7,6 +7,14 @@ import '../styles/header.css';
 function Header() {
     const { cartItems } = useContext(ShopContext);
 
+    const totalItems = (cart) => {
+        let sum = 0;
+        cart.forEach((item) => {
+            sum += item.count;
+        })
+        return sum;
+    }
+
     return (
         <div className="header">
             <Link to="/" id="header-name">Shop Name</Link>
@@ -14,7 +22,7 @@ function Header() {
                 <p>Shop</p>
             </Link>
             <Link to="/cart" id="header-btn">
-                <p>{`Cart ${cartItems.length}`}</p>
+                <p>{`Cart ${totalItems(cartItems)}`}</p>
             </Link>
         </div>
     )
