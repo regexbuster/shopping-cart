@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-
-import '../styles/header.css';
 import { useContext } from 'react';
+
 import { ShopContext } from './App';
+import '../styles/header.css';
 
 function Header() {
     const { cartItems } = useContext(ShopContext);

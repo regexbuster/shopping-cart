@@ -1,9 +1,9 @@
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import { ShopContext } from "./App";
 import Header from "./Header";
 import '../styles/item.css';
-
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 function Item() {
     const {products, addToCart} = useContext(ShopContext);

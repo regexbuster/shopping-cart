@@ -1,7 +1,7 @@
 import { useContext } from "react";
+
 import Header from "./Header";
 import { ShopContext } from "./App";
-
 import '../styles/cart.css'
 
 function Cart() {
